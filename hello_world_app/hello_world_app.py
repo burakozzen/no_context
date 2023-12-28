@@ -3,16 +3,9 @@ from fastapi import FastAPI, Path
 app = FastAPI()
 
 
-# uvicorn app:app --reload
-
 @app.get("/")
-async def root():
-    return {"message": "Hello World Burak"}
-
-
-@app.get("/about")
-async def about():
-    return {"message": "About called."}
+def index():
+    return "Hello World Burak !"
 
 
 inventory = {
