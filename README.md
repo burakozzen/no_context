@@ -1,1 +1,2 @@
-.
+- docker build -t no_context_docker .       -> docker build
+- docker run -p 8000:8000 no_context_docker -> 8000 portu üzerinden container yaratılıyor
