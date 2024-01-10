@@ -1,13 +1,11 @@
 FROM python:3.10
 
-ADD hello_world_main.py .
-
 WORKDIR /app
 
-COPY requirements.txt .
+COPY ./requirements.txt /app/requirements.txt
 
-RUN pip install -r requirements.txt
+RUN pip install -r /app/requirements.txt
 
-COPY . .
+COPY . ./app/no_context
 
-CMD ["python","./hello_world_main.py"]
+CMD ["uvicorn","hello_world_app.hello_world_app:app","--host","0.0.0.0","--port","8000"]
