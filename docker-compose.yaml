@@ -1,6 +1,6 @@
-version: '3.8'
+version: '2'
 services:
-    awesome-api:
+    no_context_docker:
         restart: always
         build:
             context: .
