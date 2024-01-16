@@ -3,18 +3,15 @@ import sys
 from typing import Any
 
 
-class Singleton(type):
-    _instances = {}
+class ApiLogger(object):
+    __instance = None
 
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
+    def __new__(cls, *args, **kwargs):
+        if not hasattr(cls, 'instance'):
+            cls.__instance = super(ApiLogger, cls).__new__(cls)
+        return cls.__instance
 
-
-# __metaclass__=Singleton
-class ApiLogger:
-    def __init__(self, name: str = "ApiLogger", log_file_name: str = "api"):
+    def __init__(self, name: str, log_file_name: str):
         # get logger
         self.logger: logging.Logger = logging.getLogger(name=name)
 
