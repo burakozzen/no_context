@@ -1,8 +1,7 @@
-version: '2'
+version: '3'
 services:
     no_context_docker:
         restart: always
-        build:
-            context: .
+        build: .
         ports:
             - "8000:8000"
