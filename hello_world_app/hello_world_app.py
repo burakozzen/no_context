@@ -1,14 +1,13 @@
 from fastapi import FastAPI, Path
 import uvicorn
-from core.logger.api_logger import ApiLogger
-from core.logger.middleware_logger import log_middleware
+from core.logger.api_logger import apiLogger
+from core.logger.mid_logger.MiddlewareLogger import log_middleware
 from starlette.middleware.base import BaseHTTPMiddleware
 
 app = FastAPI()
 app.add_middleware(middleware_class=BaseHTTPMiddleware, dispatch=log_middleware)
-api_logger = ApiLogger()
 
-api_logger.info("api starting.")
+apiLogger.info("api starting.")
 
 
 @app.get("/")

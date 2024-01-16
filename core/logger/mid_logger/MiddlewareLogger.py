@@ -1,7 +1,7 @@
 import time
 
 from fastapi import Request
-from core.logger.api_logger import ApiLogger
+from core.logger.api_logger import apiLogger
 
 
 async def log_middleware(request: Request, call_next):
@@ -14,5 +14,5 @@ async def log_middleware(request: Request, call_next):
         'method': request.method,
         'process_time': process_time
     }
-    ApiLogger().info(msg=log_dict)
+    apiLogger.info(msg=log_dict)
     return response
