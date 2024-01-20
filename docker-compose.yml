@@ -1,6 +1,6 @@
 version: '3'
 services:
-    no_context_docker:
+    hello_world_app:
         restart: always
         build: .
         ports:
