@@ -12,7 +12,7 @@ apiLogger.info("api starting.")
 
 @app.get("/")
 def index():
-    return "Hello World Burak !"
+    return "Hello World Burak main_project/Dockerfile!"
 
 
 inventory = {
