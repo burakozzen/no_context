@@ -1,4 +1,4 @@
-from hello_world_app.hello_world_app import app
+from main_project.hello_world_app.hello_world_app import app
 from fastapi.testclient import TestClient
 import pytest
 

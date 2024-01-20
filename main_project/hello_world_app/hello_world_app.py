@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Path
 import uvicorn
-from core.logger.api_logger import apiLogger
-from core.logger.mid_logger.MiddlewareLogger import log_middleware
+from main_project.core.logger.api_logger import apiLogger
+from main_project.core.logger.mid_logger.MiddlewareLogger import log_middleware
 from starlette.middleware.base import BaseHTTPMiddleware
 
 app = FastAPI()
