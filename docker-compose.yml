@@ -2,6 +2,8 @@ version: '3'
 services:
     hello_world_app:
         restart: always
-        build: .
+        build:
+            context: .
+            dockerfile: main_project/Dockerfile
         ports:
             - "8000:8000"
